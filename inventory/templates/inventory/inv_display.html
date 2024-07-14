@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}   
+<h1>My Articles</h1>
+<table class="user-articles-table">
+    <thead>
+        <tr class="user-articles-header-row">
+            <th class="user-articles-header">Title</th>
+            <th class="user-articles-header">Content</th>
+            <th class="user-articles-header">Date</th>
+            <th class="user-articles-header">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for article in articles %}
+        <tr class="user-articles-row">
+            <td class="user-articles-cell">{{ article.title }}</td>
+            <td class="user-articles-cell">{{ article.body|slice:":20" }}</td>
+            <td class="user-articles-cell">{{ article.date }}</td>
+            <td class="user-articles-cell">
+                <a href="{% url 'inventory:article_update' article.slug %}"><button class="user-articles-edit">Edit</button></a>
+                <a href="{% url 'inventory:delete_confirm' article.slug %}"><button class="user-articles-delete">Delete</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,322 @@
+body{
+    background-color: #000;
+    background-image: url(/static/stars.png);
+    background-repeat: no-repeat;
+    color: #faf8fc;
+}
+
+body *{
+    font-family: Ubuntu;
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: normal;
+    margin: 0;
+}
+a, a:hover, a:visited{
+    color: #faf8fc;
+    text-decoration: none;
+}
+
+.wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+div.wrapper > h1{
+    text-align: center;
+    margin: 50px auto;
+    font-size: 3.4em
+
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+
+nav{
+    justify-self: end;
+}
+
+nav li{
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+nav button{
+    background: none;
+    color: #faf8fc;
+    cursor: pointer;
+    border: 0;
+    font-size: 16px;
+}
+
+.articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.article{
+    padding: 10px;
+    border: 1px solid #a14ac9;
+    position: relative;
+    border-radius: 8px;
+}
+
+.article h2{
+    font-size: 1.3em;
+    margin-top: 60px;
+}
+
+.article-date{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    color: #747474;
+    font-family: sans-serif;
+    font-size: 10px;
+}
+
+.article .author{
+    /* padding: 20px 0px; */
+    /* background: ##a14ac9;
+    /* position: absolute; */
+    position: absolute;
+    left: 0px;
+    padding: 10px 0px;
+    top: 0px;
+    /* margin: 0; */
+    color: #faf8fc;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.author span{
+    font-weight: 50;
+    margin-left: 10px;
+}
+
+.article-content{
+    font-family: system-ui;
+    font-size: 14px;
+}
+
+.article-detail .article{
+    padding: 0;
+}
+
+.article-detail  .article img{
+    max-width: 100%;
+}
+
+.article-detail{
+    text-align: center;
+    margin: 20px 0px;
+    font-size: 2em
+}
+
+.article-detail .article h3{
+    text-align: center;
+}
+
+.article-detail  .article p{
+    margin: 10px 20px;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.site-form {
+    margin-top: 60px;
+    border: 1px solid #a14ac9;
+    padding: 20px;
+}
+
+.site-form input, .site-form textarea{
+    display: block;
+    margin: 20px 0 0px 0;
+    padding: 10px;
+}
+
+a.highlight{
+    border: 1px solid #a14ac9;
+    padding: 10px;
+    border-radius: 4px;
+    color: #a14ac9;
+}
+
+.helptext, .helptext ul{
+    margin: 0 auto 20px;
+    color: #767676;
+    font-size: 14px;
+    display: block;
+}
+
+.errorlist li{
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid #FF5722;
+    margin: 10px 0;
+    color: #FF5722
+}
+
+.errorlist{
+    padding: 0;
+}
+
+.site-form input[type="submit"]{
+    background: #a14ac9;
+    border: 0;
+    color: #faf8fc;
+    font-size: 20px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+/* Align navigation list to the top right corner */
+.navigation-list {
+    position: absolute; /* Take the navigation list out of the normal document flow */
+    top: 0; /* Align to the top of the nearest positioned ancestor or the viewport */
+    right: 0; /* Align to the right of the nearest positioned ancestor or the viewport */
+    margin: 50px; /* Add some space from the top and right edges */
+}
+
+.site-title {
+    display: block; /* Ensure the logo is a block element to apply margin and positioning */
+    margin: 0 auto; /* Center the logo horizontally */
+    max-width: 100%; /* Ensure the logo is responsive and fits its container */
+    height: auto; /* Maintain aspect ratio */
+    padding: 20px 20px; /* Add some padding around the logo */
+}
+
+
+/* INVENTORY DISPLAY */
+
+.user-articles-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-articles-header-row {
+    background-color: #ffffff;
+    color: #a14ac9;
+}
+
+.user-articles-header {
+    padding: 8px 12px;
+    border: 1px solid #a14ac9;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.user-articles-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.user-articles-cell {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+}
+
+.user-articles-edit{
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 7px;
+    border: solid 2px #ffec59;
+    background-color: #ffec5900;
+    color: #ffec59;
+    font-weight: bolder;
+}
+
+.user-articles-delete {
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 7px;
+    background-color: #ffec5900;
+    border: solid 2px #FF5722;
+    color: #FF5722;
+    font-weight: bolder;
+}
+
+
+
+.user-articles-edit:hover, .user-articles-delete:hover {
+    text-decoration: underline;
+}
+
+
+/* delete confirm page*/
+
+/* delete_confirm.css */
+
+.delete-article-container {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+    max-width: 600px;
+    margin: 150px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    /* background-color: #f9f9f9; */
+    box-shadow: 0 4px 8px rgba(203, 203, 203, 0.1);
+}
+
+.delete-article-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.delete-article-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+    text-align: center;
+}
+
+.delete-article-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.delete-article-submit {
+    padding: 10px 20px;
+    border: solid 2px #e74d3c;
+    border-radius: 4px;
+    background-color: #a22112db;
+    color: #d9d9d9;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-article-submit:hover {
+    background-color: #c0392b;
+}
+
+.delete-article-cancel {
+    padding: 10px 5px;
+    border: 1px solid #a14ac9;
+    border-radius: 4px;
+    color: #a535c4;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.delete-article-cancel:hover {
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    color: #a535c4;
+    transition: background-color 0.3s ease;
+}

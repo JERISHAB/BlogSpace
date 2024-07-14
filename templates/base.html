@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1 class="site-title">
+        <a href="{% url 'home' %}" class="home-link">
+            <img src="{% static 'logo.png'%}" alt="the page logo" class="logo-image">
+        </a>
+    </h1>
+   <div class="wrapper site-wrapper">
+        {% comment %} <h1 class="site-title">
+            <a href="{% url 'home' %}" class="home-link">
+                <img src="{% static 'logo.png'%}" alt="the page logo" class="logo-image">
+            </a>
+        </h1> {% endcomment %}
+        <nav class="site-navigation">
+            <ul class="navigation-list">
+                {% if user.is_authenticated %}
+                    <li class="navigation-item logout-item">
+                        <form class="logout-link logout-form" action="{% url 'accounts:logout' %}" method="POST" >
+                            {% csrf_token %}
+                            <button type="submit" class="logout-button">logout</button>
+                        </form>
+                    </li>
+                    <li class="navigation-item create-article-item"><a href="{% url 'articles:create' %}" class="highlight create-article-link">New Article</a></li>
+                    <li class="navigation-item profile-item"><a href="{% url 'inventory:display' %}" class="profile-link"><img src="{% static "profile.png" %}" alt="" class="profile_img"></a></li>
+                {% else %}
+                <li class="navigation-item login-item"><a href="{% url 'accounts:login' %}" class="login-link">Login</a></li>
+                <li class="navigation-item signup-item"><a href="{% url 'accounts:signup' %}" class="signup-link">Signup</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% block content %}{% endblock content %}
+
+   </div>
+    
+</body>
+</html>

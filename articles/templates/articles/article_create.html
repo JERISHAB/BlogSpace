@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="create-article">
+    {% if article %}
+        <h2>Update Article: {{ article.title }}</h2>
+        <form class="site-form" action="{% url 'inventory:article_update' slug=article.slug %}" method="POST" enctype="multipart/form-data">
+    {% else %}
+        <h2>Create a wonderful Article</h2>
+        <form class="site-form" action="{% url 'articles:create' %}" method="POST" enctype="multipart/form-data">
+    {% endif %}
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% if article %}Update{% else %}Create{% endif %}">
+    </form>
+</div>
+<script src="/static/slugify.js"></script>
+{% endblock %}
